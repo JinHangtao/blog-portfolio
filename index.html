@@ -365,6 +365,36 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:8000;o
 .audio-btn:hover{background:rgba(196,154,82,.1)}
 
 @media(max-width:768px){
+  /* 解决播放器倍速按钮重叠和溢出的补丁 */
+.player-wrap { 
+  flex-direction: column !important; /* 让封面和进度条变成上下排布 */
+  align-items: center; 
+  padding: 15px !important;
+}
+
+.player-cover { 
+  width: 150px !important; /* 手机上封面缩小点，别占太大地儿 */
+  height: 150px !important; 
+  margin: 0 0 15px 0 !important; 
+}
+
+.player-controls { 
+  width: 100%; 
+  flex-wrap: wrap !important; /* 关键：允许按钮换行 */
+  justify-content: center; 
+  gap: 12px !important; /* 给按钮之间留点缝隙 */
+}
+
+.player-speed { 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  margin-top: 10px;
+  width: 100%; 
+}
+
+.player-speed-btn {
+  padding: 4px 8px !important; /* 按钮稍微调大点方便手指点，但别太宽 */
+}
   .shell{flex-direction:column;padding:10px;gap:10px}
   .sb{width:100%;height:auto;position:static}
   .main{min-height:0}
@@ -1033,8 +1063,8 @@ panel.scrollTop=0;
       var bar=el.closest('.topbar');
       var barRect=bar.getBoundingClientRect();
       var elRect=el.getBoundingClientRect();
-      line.style.left=(elRect.left-barRect.left)+'px';
-      line.style.width=elRect.width+'px';
+     line.style.left = el.offsetLeft + 'px';
+line.style.width = el.offsetWidth + 'px';
     }
   }
 }
