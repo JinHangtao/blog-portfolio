@@ -1011,6 +1011,7 @@ document.addEventListener('mousemove',function(e){
   showCursor();
 });
 document.addEventListener('mousedown',function(){showCursor();});
+(function tick(){ox+=(mx-ox)*.1;oy+=(my-oy)*.1;curR.style.left=ox+'px';curR.style.top=oy+'px';requestAnimationFrame(tick);})();
 document.querySelectorAll('a,button,.gi,.gi1,.sb-link').forEach(function(el){
   el.addEventListener('mouseenter',function(){cur.style.width='9px';cur.style.height='9px';curR.style.width='34px';curR.style.height='34px';curR.style.borderColor='rgba(196,154,82,.52)';});
   el.addEventListener('mouseleave',function(){cur.style.width='6px';cur.style.height='6px';curR.style.width='22px';curR.style.height='22px';curR.style.borderColor='rgba(196,154,82,.3)';});
