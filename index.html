@@ -1003,7 +1003,7 @@ var mx=0,my=0,ox=0,oy=0,hideTimer=null;
 function showCursor(){
   cur.style.opacity='1';curR.style.opacity='1';
   clearTimeout(hideTimer);
-  hideTimer=setTimeout(function(){cur.style.opacity='0';curR.style.opacity='0';},300);
+  hideTimer=setTimeout(function(){cur.style.opacity='0';curR.style.opacity='0';},100);
 }
 document.addEventListener('mousemove',function(e){
   mx=e.clientX;my=e.clientY;
