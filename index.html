@@ -45,8 +45,8 @@ body{
 }
 
 /* ── cursor ── */
-#cur{width:6px;height:6px;background:var(--gold);border-radius:50%;position:fixed;z-index:9999;top:0;left:0;transform:translate(-50%,-50%);pointer-events:none;transition:width .15s,height .15s,opacity .3s;opacity:0}
-#cur-r{width:22px;height:22px;border:1px solid rgba(196,154,82,.3);border-radius:50%;position:fixed;z-index:9998;top:0;left:0;transform:translate(-50%,-50%);pointer-events:none;transition:width .2s,height .2s,border-color .2s,opacity .3s;opacity:0}
+#cur{width:6px;height:6px;background:var(--gold);border-radius:50%;position:fixed;z-index:9999;top:0;left:0;transform:translate(-50%,-50%);pointer-events:none;transition:width .15s,height .15s}
+#cur-r{width:22px;height:22px;border:1px solid rgba(196,154,82,.3);border-radius:50%;position:fixed;z-index:9998;top:0;left:0;transform:translate(-50%,-50%);pointer-events:none;transition:width .2s,height .2s,border-color .2s}
 
 /* ── grain ── */
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:8000;opacity:.4;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.022'/%3E%3C/svg%3E")}
