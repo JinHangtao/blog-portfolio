@@ -364,6 +364,21 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:8000;o
 .audio-btn{background:none;border:1px solid var(--gold-d);color:var(--gold);font-family:'Jost',sans-serif;font-weight:400;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;padding:9px 24px;border-radius:8px;cursor:none;transition:background .2s}
 .audio-btn:hover{background:rgba(196,154,82,.1)}
 
+@media(max-width:768px){
+  .shell{flex-direction:column;padding:10px;gap:10px}
+  .sb{width:100%;height:auto;position:static}
+  .main{min-height:0}
+  .topbar{overflow-x:auto;padding:0 14px}
+  .tab{margin-right:18px;font-size:.52rem;padding:14px 0}
+  .panel{padding:20px 16px 40px}
+  .g2{grid-template-columns:1fr}
+  .gi{aspect-ratio:4/3}
+  .lb-wrap{flex-direction:column;gap:20px;max-width:95vw}
+  .lb-img img{max-width:90vw;max-height:60vh}
+  .lb-side{width:100%}
+  .stmt-poem{padding:0 6vw}
+}
+
 .audio-wrap{margin-top:16px}
 .player-wrap{display:flex;gap:20px;align-items:flex-start;margin-top:8px}
 .player-cover{width:110px;height:110px;flex-shrink:0;border-radius:10px;overflow:hidden;background:var(--card);border:1px solid var(--line2);position:relative;display:flex;align-items:center;justify-content:center}
@@ -984,7 +999,19 @@ Digital Video, Accademia di Belle Arti di Roma.</p>
 <script>
 // ── Cursor ──
 var cur=document.getElementById('cur'),curR=document.getElementById('cur-r');
-var mx=0,my=0,ox=0,oy=0;
+var mx=0,my=0,ox=0,oy=0,hideTimer=null;
+function showCursor(){
+  cur.style.opacity='1';curR.style.opacity='1';
+  clearTimeout(hideTimer);
+  hideTimer=setTimeout(function(){cur.style.opacity='0';curR.style.opacity='0';},2000);
+}
+document.addEventListener('mousemove',function(e){
+  mx=e.clientX;my=e.clientY;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+  showCursor();
+});
+document.addEventListener('mousedown',function(){showCursor();});
+(function tick(){ox+=(mx-ox)*.1;oy+=(my-oy)*.1;curR.style.left=ox+'px';curR.style.top=oy+'px';requestAnimationFrame(tick);})();
 document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
 (function tick(){ox+=(mx-ox)*.1;oy+=(my-oy)*.1;curR.style.left=ox+'px';curR.style.top=oy+'px';requestAnimationFrame(tick);})();
 document.querySelectorAll('a,button,.gi,.gi1,.sb-link').forEach(function(el){
