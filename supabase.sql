@@ -90,3 +90,13 @@ BEGIN
   WHERE created_at < now() - INTERVAL '1 hour';
 END;
 $$ LANGUAGE plpgsql;
+-- 開啟 RLS
+ALTER TABLE public.comment_rate_limits ENABLE ROW LEVEL SECURITY;
+
+-- 允許插入
+CREATE POLICY "allow insert" ON public.comment_rate_limits
+  FOR INSERT WITH CHECK (true);
+
+-- 允許函數讀取
+CREATE POLICY "allow select" ON public.comment_rate_limits
+  FOR SELECT USING (true);
