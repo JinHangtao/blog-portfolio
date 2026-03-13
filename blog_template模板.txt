@@ -1,0 +1,79 @@
+═══════════════════════════════════
+Jin Hangtao Blog · 发文模板
+═══════════════════════════════════
+
+每次发帖只需改：
+  1. 日期
+  2. 标题
+  3. 正文
+  4. 三处 postX → 改成不重复的编号（post4、post5…）
+  5. 图片/视频文件名（放在 images/ 文件夹）
+
+───────────────────────────────────
+已用编号
+───────────────────────────────────
+post1 → 开源模型
+post2 → japan，第一次出國
+post3 → 貓貓
+post4 → 成瘾性和意志的关系
+post5 → 下一篇从这里开始
+
+───────────────────────────────────
+模板一：纯文字
+───────────────────────────────────
+<article class="blog-post">
+  <div class="blog-meta">
+    <span class="blog-date">2026 . 3 . 13</span>
+  </div>
+  <h3 class="blog-title">标题</h3>
+  <p class="blog-body">正文内容</p>
+  <div style="margin-top:20px;border-top:1px solid var(--line);padding-top:16px">
+    <div id="cl-postX" style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px"></div>
+    <div class="comment-row" style="display:flex;gap:8px">
+      <input id="cn-postX" placeholder="留下大名" style="width:100px;background:var(--card);border:1px solid var(--line2);border-radius:7px;padding:8px 12px;color:var(--fg);font-family:'Jost',sans-serif;font-size:.72rem;outline:none">
+      <input id="cm-postX" placeholder="說點什麽..." style="flex:1;background:var(--card);border:1px solid var(--line2);border-radius:7px;padding:8px 12px;color:var(--fg);font-family:'Jost',sans-serif;font-size:.72rem;outline:none">
+      <button onclick="submitC('postX')" style="background:none;border:1px solid var(--gold-d);color:var(--gold);font-family:'Jost',sans-serif;font-size:.52rem;letter-spacing:.2em;padding:8px 16px;border-radius:7px;cursor:pointer">发送</button>
+    </div>
+  </div>
+</article>
+
+───────────────────────────────────
+模板二：加图片（插在 </p> 后面）
+───────────────────────────────────
+<article class="blog-post">
+  <div class="blog-meta">
+    <span class="blog-date">2026 . 3 . 13</span>
+  </div>
+  <h3 class="blog-title">标题</h3>
+  <p class="blog-body">正文内容</p>
+  <img loading="lazy" src="images/文件名.jpg" style="width:100%;border-radius:10px;margin:14px 0;">
+  <div style="margin-top:20px;border-top:1px solid var(--line);padding-top:16px">
+    <div id="cl-postX" style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px"></div>
+    <div class="comment-row" style="display:flex;gap:8px">
+      <input id="cn-postX" placeholder="留下大名" style="width:100px;background:var(--card);border:1px solid var(--line2);border-radius:7px;padding:8px 12px;color:var(--fg);font-family:'Jost',sans-serif;font-size:.72rem;outline:none">
+      <input id="cm-postX" placeholder="說點什麽..." style="flex:1;background:var(--card);border:1px solid var(--line2);border-radius:7px;padding:8px 12px;color:var(--fg);font-family:'Jost',sans-serif;font-size:.72rem;outline:none">
+      <button onclick="submitC('postX')" style="background:none;border:1px solid var(--gold-d);color:var(--gold);font-family:'Jost',sans-serif;font-size:.52rem;letter-spacing:.2em;padding:8px 16px;border-radius:7px;cursor:pointer">发送</button>
+    </div>
+  </div>
+</article>
+───────────────────────────────────
+模板三：加视频（插在 </p> 后面）
+───────────────────────────────────
+<article class="blog-post">
+  <div class="blog-meta">
+    <span class="blog-date">2026 . 3 . 13</span>
+  </div>
+  <h3 class="blog-title">标题</h3>
+  <p class="blog-body">正文内容</p>
+  <video controls poster="images/封面图.jpg" style="width:100%;border-radius:var(--ri);margin:16px 0;max-height:70vh">
+    <source src="images/视频文件名.mp4" type="video/mp4">
+  </video>
+  <div style="margin-top:20px;border-top:1px solid var(--line);padding-top:16px">
+    <div id="cl-postX" style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px"></div>
+    <div class="comment-row" style="display:flex;gap:8px">
+      <input id="cn-postX" placeholder="留下大名" style="width:100px;background:var(--card);border:1px solid var(--line2);border-radius:7px;padding:8px 12px;color:var(--fg);font-family:'Jost',sans-serif;font-size:.72rem;outline:none">
+      <input id="cm-postX" placeholder="說點什麽..." style="flex:1;background:var(--card);border:1px solid var(--line2);border-radius:7px;padding:8px 12px;color:var(--fg);font-family:'Jost',sans-serif;font-size:.72rem;outline:none">
+      <button onclick="submitC('postX')" style="background:none;border:1px solid var(--gold-d);color:var(--gold);font-family:'Jost',sans-serif;font-size:.52rem;letter-spacing:.2em;padding:8px 16px;border-radius:7px;cursor:pointer">发送</button>
+    </div>
+  </div>
+</article>
