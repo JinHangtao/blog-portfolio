@@ -5,7 +5,7 @@ A personal space for artwork, writing, and things I want to remember.
 
 ---
 
-**Blog** → [jinhangtao.com](https://jinhangtao.com)  
+**Blog** → [jinhangtao.com](https://jinhangtao.com)
 
 ---
 
